@@ -210,8 +210,7 @@ def lint_file(path, cfg):
 
     # Try to read the file content and handle potential errors
     try:
-        with open(path, encoding='utf-8') as f:
-        lines = f.read().splitlines()
+        lines = open(path, encoding='utf-8').read().splitlines()
     except Exception as e:
         return [f"::error file={path},line=1::Cannot read file: {e}"] # Return as a list of issues
 
